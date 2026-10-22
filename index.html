@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teng Mei</title>
+<meta name="description" content="Teng Mei, M.S. student at the University of Tokyo, working on on-device LLM inference systems.">
+<style>
+  :root {
+    --bg: #fbfbfa; --fg: #1f1f1d; --muted: #6b6b66; --rule: #e3e3df; --accent: #1f5f8b; --tag: #8a5a1c;
+    --todo-bg: #fff6e0; --todo-fg: #7a5a12;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1a1a19; --fg: #e8e8e4; --muted: #a2a29c; --rule: #33332f; --accent: #8cc1e8; --tag: #e0b072;
+            --todo-bg: #3a3220; --todo-fg: #e9cf8f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 20px 40px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag { color: var(--tag); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  h1 { font-size: 34px; line-height: 1.2; margin: 6px 0 12px; }
+  h2 { font-size: 19px; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+  .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 0; }
+  .todo { background: var(--todo-bg); color: var(--todo-fg); border-radius: 6px; padding: 10px 14px; font-size: 14px; }
+  ul.plain { padding-left: 20px; margin: 0; }
+  ul.plain li { margin: 3px 0; }
+  .rows { display: grid; grid-template-columns: 112px 1fr; gap: 8px 16px; }
+  .rows .d { color: var(--muted); font-size: 14px; padding-top: 2px; white-space: nowrap; }
+  .item { margin: 0 0 16px; }
+  .item .t { font-weight: 600; }
+  .item .a, .item .v { color: var(--muted); font-size: 15px; }
+  .item .x { font-size: 14px; margin-top: 2px; }
+  .item .x a + a::before { content: "·"; color: var(--muted); margin: 0 8px; }
+  .me { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  footer { color: var(--muted); font-size: 13px; margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--rule); }
+  @media (max-width: 560px) {
+    main { padding-top: 36px; }
+    h1 { font-size: 28px; }
+    .rows { grid-template-columns: 1fr; gap: 0; }
+    .rows .d { padding-top: 10px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<div class="tag">M.S. Student · On-Device LLM Systems</div>
+<h1>Teng Mei</h1>
+
+<!-- TODO: about me (who you are, what you work on, what you are looking for) -->
+<p class="todo">About me: to be written.</p>
+
+<div class="links">
+  <a href="mailto:mei347957756@gmail.com">Email</a>
+  <a href="https://github.com/meitmt">GitHub</a>
+  <a href="https://huggingface.co/meit-ut">Hugging Face</a>
+</div>
+
+<h2>Research Interests</h2>
+<ul class="plain">
+  <li>On-device LLM and VLM inference on unified-memory edge SoCs (NVIDIA Jetson, Snapdragon)</li>
+  <li>Memory- and bandwidth-aware scheduling of LLMs alongside real-time workloads</li>
+  <li>Speculative decoding and quantization for edge deployment</li>
+  <li>Heterogeneous CPU / GPU / NPU execution, llama.cpp internals</li>
+</ul>
+
+<h2>News</h2>
+<div class="rows">
+  <div class="d">Oct 2026</div>
+  <div>Released <a href="https://github.com/meitmt/EdgeSpecQ">EdgeSpecQ</a> and edge DSpark drafters for
+    LFM2.5-VL on <a href="https://huggingface.co/meit-ut/LFM2.5-VL-3B-DSpark-Edge-GGUF">Hugging Face</a>.</div>
+  <div class="d">Sep 2026</div>
+  <div>Presented MCSched at APSys '26 in Bangkok.</div>
+  <div class="d">Apr 2026</div>
+  <div>Started my M.S. at the University of Tokyo.</div>
+  <div class="d">Dec 2025</div>
+  <div>Joined CUHK-Shenzhen as a research assistant.</div>
+</div>
+
+<h2>Publications</h2>
+<div class="item">
+  <div class="t">MCSched: Memory-Controller-Aware Scheduling for Embodied LLM Workloads on NVIDIA Jetson</div>
+  <div class="a"><span class="me">Teng Mei</span>, Chengxuan Pei, Marco Canini, Yunming Xiao</div>
+  <div class="v">ACM SIGOPS Asia-Pacific Workshop on Systems (APSys '26)</div>
+  <div class="x"><a href="https://mcanini.github.io/papers/mcsched.apsys26.pdf">PDF</a></div>
+</div>
+<div class="item">
+  <div class="t">YOLO-UOD: An Underwater Small Object Detector via Improved Efficient Layer Aggregation Network</div>
+  <div class="a">Weiwen Chen, Tingting Zhuang, Yuan-fang Zhang, <span class="me">Teng Mei</span>, Xiaoyu Tang</div>
+  <div class="v">IET Image Processing, 2024</div>
+</div>
+
+<h2>Projects</h2>
+<div class="item">
+  <div class="t">EdgeSpecQ: speculative decoding for LFM2.5-VL on edge devices</div>
+  <div class="v">3.2× faster decoding on an 8 GB Jetson Orin Nano with quantized, reduced-vocabulary DSpark drafters,
+    without retraining; measured on Jetson, a Snapdragon 8 Elite phone and an RTX 5070.</div>
+  <div class="x">
+    <a href="https://github.com/meitmt/EdgeSpecQ">Code</a><a href="https://github.com/meitmt/EdgeSpecQ/blob/main/docs/tech_note.md">Technical note</a><a href="https://huggingface.co/meit-ut/LFM2.5-VL-3B-DSpark-Edge-GGUF">Models</a><a href="https://github.com/ggml-org/llama.cpp/pull/30858">llama.cpp PR</a>
+  </div>
+</div>
+
+<h2>Education</h2>
+<div class="rows">
+  <div class="d">Apr 2026 – now</div>
+  <div>M.S., Electrical Engineering and Information Systems, The University of Tokyo</div>
+  <div class="d">2020 – 2024</div>
+  <div>B.Eng., Electronic Information Engineering, South China Normal University</div>
+</div>
+
+<h2>Experience</h2>
+<div class="rows">
+  <div class="d">Dec 2025 – now</div>
+  <div>Research Assistant, The Chinese University of Hong Kong, Shenzhen (advisor: Prof. Yunming Xiao)</div>
+</div>
+
+<footer>Last updated: October 2026</footer>
+
+</main>
+</body>
+</html>
