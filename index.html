@@ -35,12 +35,21 @@
   .item .x { font-size: 14px; margin-top: 2px; }
   .item .x a + a::before { content: "·"; color: var(--muted); margin: 0 8px; }
   .me { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .card { display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: start; margin: 0 0 22px; }
+  .card .thumb { width: 200px; aspect-ratio: 16 / 11; object-fit: contain; background: #fff; border: 1px solid var(--rule);
+                 border-radius: 6px; padding: 4px; }
+  .card .item { margin: 0; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; color: var(--tag); border: 1px solid var(--tag);
+           border-radius: 4px; padding: 0 6px; margin-right: 6px; vertical-align: 1px; }
   footer { color: var(--muted); font-size: 13px; margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--rule); }
   @media (max-width: 560px) {
     main { padding-top: 36px; }
     h1 { font-size: 28px; }
     .rows { grid-template-columns: 1fr; gap: 0; }
     .rows .d { padding-top: 10px; }
+    .card { grid-template-columns: 1fr; gap: 10px; }
+    .card .thumb { width: 100%; max-width: 360px; }
+    .card .nothumb { display: none; }
   }
 </style>
 </head>
@@ -81,19 +90,29 @@
 </div>
 
 <h2>Publications</h2>
-<div class="item">
-  <div class="t">MCSched: Memory-Controller-Aware Scheduling for Embodied LLM Workloads on NVIDIA Jetson</div>
-  <div class="a"><span class="me">Teng Mei</span>, Chengxuan Pei, Marco Canini, Yunming Xiao</div>
-  <div class="v">ACM SIGOPS Asia-Pacific Workshop on Systems (APSys '26)</div>
-  <div class="x"><a href="https://mcanini.github.io/papers/mcsched.apsys26.pdf">PDF</a></div>
+<div class="card">
+  <img class="thumb" src="images/mcsched.png" alt="MCSched overview: robotics and LLM execution share the memory controller of a Jetson's unified memory">
+  <div class="item">
+    <div class="t">MCSched: Memory-Controller-Aware Scheduling for Embodied LLM Workloads on NVIDIA Jetson</div>
+    <div class="a"><span class="me">Teng Mei</span>, Chengxuan Pei, Marco Canini, Yunming Xiao</div>
+    <div class="v"><span class="badge">APSys '26</span>ACM SIGOPS Asia-Pacific Workshop on Systems</div>
+    <div class="v">Real-time robotics tasks and LLM inference share one memory controller on a Jetson; scheduling with
+      memory-pressure and deadline feedback cuts sensor deadline misses by up to 83% while keeping LLM speed.</div>
+    <div class="x"><a href="https://mcanini.github.io/papers/mcsched.apsys26.pdf">PDF</a></div>
+  </div>
 </div>
-<div class="item">
-  <div class="t">YOLO-UOD: An Underwater Small Object Detector via Improved Efficient Layer Aggregation Network</div>
-  <div class="a">Weiwen Chen, Tingting Zhuang, Yuan-fang Zhang, <span class="me">Teng Mei</span>, Xiaoyu Tang</div>
-  <div class="v">IET Image Processing, 2024</div>
+<div class="card">
+  <div class="nothumb"></div>
+  <div class="item">
+    <div class="t">YOLO-UOD: An Underwater Small Object Detector via Improved Efficient Layer Aggregation Network</div>
+    <div class="a">Weiwen Chen, Tingting Zhuang, Yuan-fang Zhang, <span class="me">Teng Mei</span>, Xiaoyu Tang</div>
+    <div class="v"><span class="badge">IET IPR</span>IET Image Processing, 2024</div>
+  </div>
 </div>
 
 <h2>Projects</h2>
+<div class="card">
+<img class="thumb" src="images/edgespecq.png" alt="Decode speedup of the official DSpark drafter and of the edge drafters on each device">
 <div class="item">
   <div class="t">EdgeSpecQ: speculative decoding for LFM2.5-VL on edge devices</div>
   <div class="v">3.2× faster decoding on an 8 GB Jetson Orin Nano with quantized, reduced-vocabulary DSpark drafters,
@@ -101,6 +120,7 @@
   <div class="x">
     <a href="https://github.com/meitmt/EdgeSpecQ">Code</a><a href="https://github.com/meitmt/EdgeSpecQ/blob/main/docs/tech_note.md">Technical note</a><a href="https://huggingface.co/meit-ut/LFM2.5-VL-3B-DSpark-Edge-GGUF">Models</a><a href="https://github.com/ggml-org/llama.cpp/pull/30858">llama.cpp PR</a>
   </div>
+</div>
 </div>
 
 <h2>Education</h2>
